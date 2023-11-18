@@ -16,6 +16,7 @@ import getUuid from "uuid-by-string";
 import { useRouter } from "next/router";
 
 const GOLDENRATIO = 1.61803398875;
+//
 
 export default function Events({ images }) {
   return (
