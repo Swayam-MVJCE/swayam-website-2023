@@ -1,4 +1,4 @@
-import Events from "@/components/Events";
+import Events, { ResponsiveCanvas } from "@/components/Events";
 import { images } from "@/constants/images";
 const Home = () => {
   return (

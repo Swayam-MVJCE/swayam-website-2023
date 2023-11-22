@@ -2,7 +2,7 @@
 
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   useCursor,
   MeshReflectorMaterial,
@@ -18,26 +18,11 @@ const GOLDENRATIO = 1.61803398875;
 
 export default function Events({ images }) {
   return (
-    <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
+    <Canvas camera={{ fov: 70, position: [0, 2, 15] }}>
       <color attach="background" args={["#1B0026"]} />
       <fog attach="fog" args={["#1B0026", 0, 15]} />
       <group position={[0, -0.5, 0]}>
         <Frames images={images} />
-        <mesh rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[50, 50]} />
-          <MeshReflectorMaterial
-            blur={[300, 100]}
-            resolution={2048}
-            mixBlur={1}
-            mixStrength={80}
-            roughness={1}
-            depthScale={1.2}
-            minDepthThreshold={0.4}
-            maxDepthThreshold={1.4}
-            color="#050505"
-            metalness={0.5}
-          />
-        </mesh>
       </group>
       <Environment preset="sunset" />
     </Canvas>
