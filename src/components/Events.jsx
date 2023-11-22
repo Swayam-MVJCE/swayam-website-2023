@@ -2,14 +2,8 @@
 
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import {
-  useCursor,
-  MeshReflectorMaterial,
-  Image,
-  Text,
-  Environment,
-} from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useCursor, Image, Text } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import { easing } from "maath";
 import getUuid from "uuid-by-string";
@@ -24,7 +18,6 @@ export default function Events({ images }) {
       <group position={[0, -0.5, 0]}>
         <Frames images={images} />
       </group>
-      <Environment preset="sunset" />
     </Canvas>
   );
 }
